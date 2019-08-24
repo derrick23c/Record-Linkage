@@ -1,0 +1,17 @@
+library(readr)
+PatientRecords_7.18clean <- read_csv("C:/Users/rcourson/Desktop/R Project/PatientRecords_7.18clean.csv")
+View(PatientRecords_7.18clean)
+
+
+## DOB(7), SSN(12)
+library(RecordLinkage)
+prc=PatientRecords_7.18clean
+output_run=compare.dedup(prc, blockfld=list(c(7,12)))
+summary(output_run)
+
+library(readr)
+PatientRecords_7.18clean <- read_csv("C:/Users/rcourson/Desktop/R Project/PatientRecords_7.18clean.csv")
+View(PatientRecords_7.18clean)
+prc=PatientRecords_7.18clean
+library(RecordLinkage)
+cols=c(7,12)
